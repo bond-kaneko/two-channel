@@ -1,5 +1,5 @@
 import React from "react"
-import ThreadLink from "../atoms/ThreadLink";
+import InCategoryThreadLinks from "../molecules/InCategoryThreadLinks";
 
 const BoardIndex = () => {
     // TODO スレ一覧の取得
@@ -11,9 +11,8 @@ const BoardIndex = () => {
     return (
         <>
             <h1>掲示板一覧</h1>
-            {threads.map((thread) =>
-                <ThreadLink title={thread.title} href="#" />
-            )}
+            <InCategoryThreadLinks category="雑談" threads={threads} />
+            <InCategoryThreadLinks category="文化" threads={threads} />
         </>
     );
 }
