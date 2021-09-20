@@ -1,6 +1,8 @@
 import React from "react";
-import ThreadLink from "../atoms/ThreadLink";
+import AllThreads from "../organisms/AllThreads";
+
 import "../css/board_descripton.css"
+import BoardInfo from "../molecules/BoardInfo";
 
 
 export default (props) => {
@@ -8,11 +10,10 @@ export default (props) => {
         <>
             <h1>{props.headerText}</h1>
             <section class="green-container">
-                <h2>{props.board.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: props.board.description.replace(/\n/g, "<br />") }}></div>
+                <BoardInfo title={props.board.title} descriptionHtml={props.board.description} />
             </section>
             <section id="display-threads-section" class="green-container">
-                <ThreadLink title="スレ１" href="#" />
+                <AllThreads threads={props.board.threads} />
             </section>
         </>
     );
