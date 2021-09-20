@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import BoardIndex from './pages/BoardIndex';
+import ThreadIndex from './pages/ThreadIndex';
+import ThreadDetail from './pages/ThreadDetail';
 
 import {
     BrowserRouter as Router,
@@ -9,53 +12,25 @@ import {
     Link
 } from "react-router-dom";
 
-class Board extends React.Component {
-
-    render() {
-        return (
-            <h1>掲示板一覧</h1>
-        );
-    }
-}
-
-
-class Thread extends React.Component {
-    render() {
-        return (
-            <h1>スレ一覧</h1>
-        );
-    }
-}
-
-class ThreadDetail extends React.Component {
-    render() {
-        return (
-            <h1>スレ詳細</h1>
-        )
-    }
-}
-
-class App extends React.Component {
-    render() {
-        return (
-            <Router>
-                <Switch>
-                    <Route path="/board">
-                        <Board />
-                    </Route>
-                    <Route path="/thread/detail">
-                        <ThreadDetail />
-                    </Route>
-                    <Route path="/thread">
-                        <Thread />
-                    </Route>
-                    <Route path="/">
-                        <Board />
-                    </Route>
-                </Switch>
-            </Router>
-        );
-    }
+const App = () => {
+    return (
+        <Router>
+            <Switch>
+                <Route path="/board">
+                    <BoardIndex />
+                </Route>
+                <Route path="/thread/detail">
+                    <ThreadDetail />
+                </Route>
+                <Route path="/thread">
+                    <ThreadIndex />
+                </Route>
+                <Route path="/">
+                    <BoardIndex />
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
 
 // ========================================
