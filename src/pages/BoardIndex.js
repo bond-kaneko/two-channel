@@ -1,5 +1,5 @@
 import React from "react"
-import AllThreads from "../organisms/AllThreads";
+import DisplayAllThreads from "../templates/DisplayAllThreads";
 
 const BoardIndex = () => {
     // TODO スレ一覧の取得
@@ -16,8 +16,7 @@ const BoardIndex = () => {
 
     return (
         <>
-            <h1>掲示板一覧</h1>
-            <AllThreads threadsByCategory={threadsByCategory} />
+            <DisplayAllThreads headerText="掲示板一覧" threadsByCategory={threadsByCategory} />
         </>
     );
 }
