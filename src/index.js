@@ -4,6 +4,8 @@ import './index.css';
 import BoardIndex from './pages/BoardIndex';
 import ThreadIndex from './pages/ThreadIndex';
 import ThreadDetail from './pages/ThreadDetail';
+import BoardDetail from './pages/BoardDetail';
+import "./css/common.css";
 
 import {
     BrowserRouter as Router,
@@ -16,11 +18,11 @@ const App = () => {
     return (
         <Router>
             <Switch>
+                <Route path="/board/detail/:boardId">
+                    <BoardDetail />
+                </Route>
                 <Route path="/board">
                     <BoardIndex />
-                </Route>
-                <Route path="/thread/detail">
-                    <ThreadDetail />
                 </Route>
                 <Route path="/thread">
                     <ThreadIndex />
