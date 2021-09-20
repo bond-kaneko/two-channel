@@ -1,33 +1,20 @@
 import React from "react"
-import DisplayAllThreads from "../templates/DisplayAllThreads";
+import DisplayAllBoards from "../templates/DisplayAllBoards";
 
 const BoardIndex = () => {
-    // TODO スレ一覧の取得
-    const threads = [];
+    // TODO 掲示板一覧の取得
+    const boards = [];
     for (let i = 1; i <= 1000; i++) {
-        threads.push({ id: i, title: "スレ" + i, category: "カテゴリ" + (i % 5) })
+        boards.push({ id: i, title: "掲示板" + i, category: "カテゴリ" + (i % 5) })
     }
-
-    const threadsByCategory = threadsGroupingByCategory(threads)
 
     return (
         <>
-            <DisplayAllThreads headerText="掲示板一覧" threadsByCategory={threadsByCategory} />
+            <DisplayAllBoards headerText="掲示板一覧" boards={boards} />
         </>
     );
 }
 
-const threadsGroupingByCategory = (threads) => {
-    const threadsByCategory = {}
-    threads.forEach((thread) => {
-        if (threadsByCategory[thread.category] == undefined) {
-            threadsByCategory[thread.category] = []
-        }
 
-        threadsByCategory[thread.category].push(thread)
-    })
-
-    return threadsByCategory
-}
 
 export default BoardIndex;

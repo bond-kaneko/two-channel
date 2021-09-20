@@ -2,16 +2,16 @@ body {
     background-image: url(http://2ch.sc/ba.gif);
 }
 
-.all-threads {
+.all-boards {
     border: 1px solid;
     background-color: rgb(204, 255, 204);
     padding: 10px;
 }
 
-.thread-category {
+.board-category {
     font-weight: bold;
 }
 
-.thread-anchor {
+.board-anchor {
     color: blue;
 }
