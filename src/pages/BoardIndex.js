@@ -3,14 +3,10 @@ import DisplayAllThreads from "../templates/DisplayAllThreads";
 
 const BoardIndex = () => {
     // TODO スレ一覧の取得
-    const threads = [
-        { id: 1, title: "スレ1", category: "雑談" },
-        { id: 2, title: "スレ2", category: "雑談" },
-        { id: 3, title: "スレ3", category: "生活" },
-        { id: 4, title: "スレ4", category: "生活" },
-        { id: 5, title: "スレ5", category: "ゲーム" },
-        { id: 6, title: "スレ6", category: "ゲーム" }
-    ];
+    const threads = [];
+    for (let i = 1; i <= 1000; i++) {
+        threads.push({ id: i, title: "スレ" + i, category: "カテゴリ" + (i % 5) })
+    }
 
     const threadsByCategory = threadsGroupingByCategory(threads)
 
